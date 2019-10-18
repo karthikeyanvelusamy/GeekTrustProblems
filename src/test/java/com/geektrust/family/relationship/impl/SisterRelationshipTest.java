@@ -19,13 +19,13 @@ public class SisterRelationshipTest {
 		FamilyTree shanFamily = familyTreeInitializer
 				.getFamilyTree("King Shan");
 
-		Person chit = shanFamily.getNodeById("Chit");
-		Person vich = shanFamily.getNodeById("Vich");
-		SisterRelationship sisRelationship = new SisterRelationship(chit);
+		Person dritha = shanFamily.getNodeById("Dritha");
+		Person vritha = shanFamily.getNodeById("Vritha");
+		SisterRelationship sisRelationship = new SisterRelationship(dritha);
 		Set<Person> sis = sisRelationship.get().getRelative()
 				.getRelativePeople();
 
-		Assert.assertFalse(sis.contains(vich));
+		Assert.assertFalse(sis.contains(vritha));
 	}
 
 	@Test
@@ -35,15 +35,15 @@ public class SisterRelationshipTest {
 		FamilyTree shanFamily = familyTreeInitializer
 				.getFamilyTree("King Shan");
 
-		Person lavnya = shanFamily.getNodeById("Lavnya");
+		Person vritha = shanFamily.getNodeById("Vritha");
 		Person newNode = new Person("newSis", Gender.FEMALE);
-		shanFamily.addNewNode(newNode, "Vila");
-		SisterRelationship sisRelationship = new SisterRelationship(lavnya);
+		shanFamily.addNewNode(newNode, "Chit");
+		SisterRelationship sisRelationship = new SisterRelationship(vritha);
 		Set<Person> sis = sisRelationship.get().getRelative()
 				.getRelativePeople();
 
 		Assert.assertTrue(sis.contains(newNode));
 	}
-	
-	
+
+
 }

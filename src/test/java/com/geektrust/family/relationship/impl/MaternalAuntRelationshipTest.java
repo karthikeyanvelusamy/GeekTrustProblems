@@ -19,15 +19,14 @@ public class MaternalAuntRelationshipTest {
 		FamilyTree shanFamily = familyTreeInitializer
 				.getFamilyTree("King Shan");
 
-		Person satvy = shanFamily.getNodeById("Satvy");
-		Person newSisterToMother = new Person("NewSisterToMother",Gender.FEMALE);
-		shanFamily.addNewNode(newSisterToMother, "King Shan");
+		Person yodhan = shanFamily.getNodeById("Yodhan");
+		Person tritha = shanFamily.getNodeById("Tritha");
 		MaternalAuntRelationship maternalAuntRelationShip = new MaternalAuntRelationship(
-				satvy);
+				yodhan);
 		Set<Person> maternalAunt = maternalAuntRelationShip.get().getRelative()
 				.getRelativePeople();
 
-		Assert.assertTrue(maternalAunt.contains(newSisterToMother));
+		Assert.assertTrue(maternalAunt.contains(tritha));
 	}
 
 	@Test
@@ -37,10 +36,10 @@ public class MaternalAuntRelationshipTest {
 		FamilyTree shanFamily = familyTreeInitializer
 				.getFamilyTree("King Shan");
 
-		Person satvy = shanFamily.getNodeById("Satvy");
+		Person Asava = shanFamily.getNodeById("Asava");
 		Person lika = shanFamily.getNodeById("Lika");
 		MaternalAuntRelationship maternalAuntRelationShip = new MaternalAuntRelationship(
-				satvy);
+				Asava);
 		Set<Person> maternalAunt = maternalAuntRelationShip.get().getRelative()
 				.getRelativePeople();
 
@@ -54,12 +53,12 @@ public class MaternalAuntRelationshipTest {
 		FamilyTree shanFamily = familyTreeInitializer
 				.getFamilyTree("King Shan");
 
-		Person satvy = shanFamily.getNodeById("Satvy");
+		Person Asava = shanFamily.getNodeById("Asava");
 		MaternalAuntRelationship maternalAuntRelationShip = new MaternalAuntRelationship(
-				satvy);
+				Asava);
 		Set<Person> maternalAunt = maternalAuntRelationShip.get().getRelative()
 				.getRelativePeople();
-		Assert.assertEquals(2, maternalAunt.size());
+		Assert.assertEquals(3, maternalAunt.size());
 	}
 
 	@Test
@@ -69,7 +68,7 @@ public class MaternalAuntRelationshipTest {
 		FamilyTree shanFamily = familyTreeInitializer
 				.getFamilyTree("King Shan");
 
-		Person savya = shanFamily.getNodeById("Savya");
+		Person savya = shanFamily.getNodeById("Asava");
 		Person newNode = new Person("new Sister to mom", Gender.FEMALE);
 		shanFamily.addNewNode(newNode, "King Shan");
 
@@ -88,9 +87,9 @@ public class MaternalAuntRelationshipTest {
 		FamilyTree shanFamily = familyTreeInitializer
 				.getFamilyTree("King Shan");
 
-		Person saayan = shanFamily.getNodeById("Saayan");
+		Person saayan = shanFamily.getNodeById("Asava");
 		Person ish = shanFamily.getNodeById("Ish");
-		
+
 		Person newWifeToIsh = new Person("wife to ish", Gender.FEMALE);
 		ish.setSpouce(newWifeToIsh);
 		newWifeToIsh.setSpouce(ish);

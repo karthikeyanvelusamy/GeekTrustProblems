@@ -20,12 +20,12 @@ public class SonRelationshipTest {
 				.getFamilyTree("King Shan");
 
 		Person chit = shanFamily.getNodeById("Chit");
-		Person jaya = shanFamily.getNodeById("Jaya");
+		Person Tritha = shanFamily.getNodeById("Tritha");
 		SonRelationship sonsRelationship = new SonRelationship(chit);
 		Set<Person> sons = sonsRelationship.get().getRelative()
 				.getRelativePeople();
 
-		Assert.assertFalse(sons.contains(jaya));
+		Assert.assertFalse(sons.contains(Tritha));
 	}
 
 	@Test

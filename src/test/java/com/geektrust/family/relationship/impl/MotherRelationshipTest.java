@@ -32,12 +32,12 @@ public class MotherRelationshipTest {
 		FamilyTree shanFamily = familyTreeInitializer
 				.getFamilyTree("King Shan");
 
-		Person savya = shanFamily.getNodeById("Savya");
-		Person satya = savya.getParent();
-		MotherRelationship motherRelationShip = new MotherRelationship(savya);
+		Person yodhan = shanFamily.getNodeById("yodhan");
+		Person Dritha = yodhan.getParent();
+		MotherRelationship motherRelationShip = new MotherRelationship(yodhan);
 		Person mother = motherRelationShip.get().getRelative()
 				.getRelativePerson();
 
-		Assert.assertTrue(mother.equals(satya));
+		Assert.assertTrue(mother.equals(Dritha));
 	}
 }

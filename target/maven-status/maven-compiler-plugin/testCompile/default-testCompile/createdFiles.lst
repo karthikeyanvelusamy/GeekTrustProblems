@@ -1,0 +1,13 @@
+com\geektrust\family\relationship\impl\PaternalUncleRelationshipTest.class
+com\geektrust\family\relationship\impl\SisterRelationshipTest.class
+com\geektrust\family\relationship\impl\SisterInLawRelationshipTest.class
+com\geektrust\family\relationship\impl\MaternalUncleRelationshipTest.class
+com\geektrust\family\relationship\impl\SonRelationshipTest.class
+com\geektrust\family\relationship\impl\BrotherRelationshipTest.class
+com\geektrust\family\relationship\impl\CousinsRelationshipTest.class
+com\geektrust\family\relationship\impl\FatherRelationshipTest.class
+com\geektrust\family\relationship\impl\BrotherInLawRelationshipTest.class
+com\geektrust\family\relationship\impl\MotherRelationshipTest.class
+com\geektrust\family\relationship\impl\PaternalAuntRelationshipTest.class
+com\geektrust\family\relationship\impl\MaternalAuntRelationshipTest.class
+com\geektrust\family\relationship\impl\DaughterRelationshipTest.class

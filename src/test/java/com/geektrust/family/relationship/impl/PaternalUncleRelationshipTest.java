@@ -19,14 +19,14 @@ public class PaternalUncleRelationshipTest {
 		FamilyTree shanFamily = familyTreeInitializer
 				.getFamilyTree("King Shan");
 
-		Person driya = shanFamily.getNodeById("Driya");
-		Person vrita = shanFamily.getNodeById("Vrita");
+		Person dritha = shanFamily.getNodeById("Dritha");
+		Person ish = shanFamily.getNodeById("Ish");
 		PaternalUncleRelationship paternalUncleRelationShip = new PaternalUncleRelationship(
-				driya);
+				dritha);
 		Set<Person> paternalUncle = paternalUncleRelationShip.get()
 				.getRelative().getRelativePeople();
 
-		Assert.assertTrue(paternalUncle.contains(vrita));
+		Assert.assertTrue(paternalUncle.contains(ish));
 	}
 
 	@Test
@@ -36,14 +36,14 @@ public class PaternalUncleRelationshipTest {
 		FamilyTree shanFamily = familyTreeInitializer
 				.getFamilyTree("King Shan");
 
-		Person savya = shanFamily.getNodeById("Savya");
-		Person vich = shanFamily.getNodeById("Vich");
+		Person yodhan = shanFamily.getNodeById("Yodhan");
+		Person vritha = shanFamily.getNodeById("Vritha");
 		PaternalUncleRelationship paternalUncleRelationShip = new PaternalUncleRelationship(
-				savya);
+				yodhan);
 		Set<Person> paternalUncle = paternalUncleRelationShip.get()
 				.getRelative().getRelativePeople();
 
-		Assert.assertTrue(paternalUncle.contains(vich));
+		Assert.assertTrue(paternalUncle.contains(vritha));
 	}
 
 	@Test
@@ -53,12 +53,12 @@ public class PaternalUncleRelationshipTest {
 		FamilyTree shanFamily = familyTreeInitializer
 				.getFamilyTree("King Shan");
 
-		Person saayan = shanFamily.getNodeById("Saayan");
+		Person yodhan = shanFamily.getNodeById("Yodhan");
 		PaternalUncleRelationship paternalUncleRelationShip = new PaternalUncleRelationship(
-				saayan);
+				yodhan);
 		Set<Person> paternalUncle = paternalUncleRelationShip.get()
 				.getRelative().getRelativePeople();
-		Assert.assertEquals(3, paternalUncle.size());
+		Assert.assertEquals(1, paternalUncle.size());
 	}
 
 	@Test
@@ -68,11 +68,11 @@ public class PaternalUncleRelationshipTest {
 		FamilyTree shanFamily = familyTreeInitializer
 				.getFamilyTree("King Shan");
 
-		Person lavnya = shanFamily.getNodeById("Lavnya");
-		Person newNode = new Person("newBroToVila", Gender.MALE);
-		shanFamily.addNewNode(newNode, "Vich");
+		Person vila = shanFamily.getNodeById("Vila");
+		Person newNode = new Person("newBroToVich", Gender.MALE);
+		shanFamily.addNewNode(newNode, "King Shan");
 
-		PaternalUncleRelationship paternalUncleRelationship = new PaternalUncleRelationship(lavnya);
+		PaternalUncleRelationship paternalUncleRelationship = new PaternalUncleRelationship(vila);
 		Set<Person> paternalUncle = paternalUncleRelationship.get().getRelative()
 				.getRelativePeople();
 
@@ -86,12 +86,12 @@ public class PaternalUncleRelationshipTest {
 		FamilyTree shanFamily = familyTreeInitializer
 				.getFamilyTree("King Shan");
 
-		Person satvy = shanFamily.getNodeById("Satvy");
-		Person newNode = new Person("new son to shan", Gender.MALE);
-		shanFamily.addNewNode(newNode, "King Shan");
-		
+		Person yodhan = shanFamily.getNodeById("Yodhan");
+		Person newNode = new Person("new son to chit", Gender.MALE);
+		shanFamily.addNewNode(newNode, "Chit");
+
 		PaternalUncleRelationship paternalUncleRelationShip = new PaternalUncleRelationship(
-				satvy);
+				yodhan);
 		Set<Person> paternalUncle = paternalUncleRelationShip.get().getRelative()
 				.getRelativePeople();
 

@@ -16,13 +16,13 @@ public class FatherRelationshipTest {
 		FamilyTree shanFamily = familyTreeInitializer
 				.getFamilyTree("King Shan");
 
-		Person saayan = shanFamily.getNodeById("Saayan");
-		Person vyan = saayan.getParent().getSpouce();
-		FatherRelationship fatherRelationShip = new FatherRelationship(saayan);
+		Person yodhan = shanFamily.getNodeById("Yodhan");
+		Person jaya = shanFamily.getNodeById("Jaya");
+		FatherRelationship fatherRelationShip = new FatherRelationship(yodhan);
 		Person father = fatherRelationShip.get().getRelative()
 				.getRelativePerson();
 
-		Assert.assertTrue(father.equals(vyan));
+		Assert.assertTrue(father.equals(jaya));
 	}
 
 	@Test
@@ -32,12 +32,12 @@ public class FatherRelationshipTest {
 		FamilyTree shanFamily = familyTreeInitializer
 				.getFamilyTree("King Shan");
 
-		Person misa = shanFamily.getNodeById("Misa");
-		Person saayan = misa.getParent();
-		FatherRelationship fatherRelationShip = new FatherRelationship(misa);
+		Person vila = shanFamily.getNodeById("Vila");
+		Person chit = vila.getParent();
+		FatherRelationship fatherRelationShip = new FatherRelationship(vila);
 		Person father = fatherRelationShip.get().getRelative()
 				.getRelativePerson();
 
-		Assert.assertTrue(father.equals(saayan));
+		Assert.assertTrue(father.equals(chit));
 	}
 }

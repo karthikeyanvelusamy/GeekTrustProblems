@@ -19,14 +19,14 @@ public class MaternalUncleRelationshipTest {
 		FamilyTree shanFamily = familyTreeInitializer
 				.getFamilyTree("King Shan");
 
-		Person satvy = shanFamily.getNodeById("Satvy");
-		Person vich = shanFamily.getNodeById("Vich");
+		Person yodhan = shanFamily.getNodeById("Yodhan");
+		Person vritha = shanFamily.getNodeById("Vritha");
 		MaternalUncleRelationship maternalUncleRelationship = new MaternalUncleRelationship(
-				satvy);
+				yodhan);
 		Set<Person> maternalUncle = maternalUncleRelationship.get()
 				.getRelative().getRelativePeople();
 
-		Assert.assertTrue(maternalUncle.contains(vich));
+		Assert.assertTrue(maternalUncle.contains(vritha));
 	}
 
 	@Test
@@ -36,43 +36,46 @@ public class MaternalUncleRelationshipTest {
 		FamilyTree shanFamily = familyTreeInitializer
 				.getFamilyTree("King Shan");
 
-		Person jata = shanFamily.getNodeById("Jata");
-		Person vrita = shanFamily.getNodeById("Vrita");
+		Person yodhan = shanFamily.getNodeById("Yodhan");
+		Person tritha = shanFamily.getNodeById("Tritha");
+		Person newHusToTritha = new Person("husband to Tritha", Gender.MALE);
+		tritha.setSpouce(newHusToTritha);
+		newHusToTritha.setSpouce(tritha);
 		MaternalUncleRelationship maternalUncleRelationship = new MaternalUncleRelationship(
-				jata);
+				yodhan);
 		Set<Person> maternalUncle = maternalUncleRelationship.get()
 				.getRelative().getRelativePeople();
 
-		Assert.assertTrue(maternalUncle.contains(vrita));
+		Assert.assertTrue(maternalUncle.contains(newHusToTritha));
 	}
 
 	@Test
-	public void When_GettingPaternalUncleList_Expect_Count() {
+	public void When_GettingMaternalUncleList_Expect_Count() {
 		FamilyTreeInitializer familyTreeInitializer = new FamilyTreeInitializer();
 		familyTreeInitializer.init();
 		FamilyTree shanFamily = familyTreeInitializer
 				.getFamilyTree("King Shan");
 
-		Person drita = shanFamily.getNodeById("Drita");
+		Person drita = shanFamily.getNodeById("Dritha");
 		MaternalUncleRelationship maternalUncleRelationship = new MaternalUncleRelationship(
 				drita);
 		Set<Person> maternalUncle = maternalUncleRelationship.get()
 				.getRelative().getRelativePeople();
-		Assert.assertEquals(2, maternalUncle.size());
+		Assert.assertEquals(3, maternalUncle.size());
 	}
 
 	@Test
-	public void When_AddingBrotherOfMother_Expect_ChangeInPaternalUncleList() {
+	public void When_AddingBrotherOfMother_Expect_ChangeInMaternalUncleList() {
 		FamilyTreeInitializer familyTreeInitializer = new FamilyTreeInitializer();
 		familyTreeInitializer.init();
 		FamilyTree shanFamily = familyTreeInitializer
 				.getFamilyTree("King Shan");
 
-		Person satvy = shanFamily.getNodeById("Satvy");
+		Person Asava = shanFamily.getNodeById("Asava");
 		Person newNode = new Person("newBroToSatya", Gender.MALE);
 		shanFamily.addNewNode(newNode, "King Shan");
 
-		MaternalUncleRelationship maternalUncleRelationship = new MaternalUncleRelationship(satvy);
+		MaternalUncleRelationship maternalUncleRelationship = new MaternalUncleRelationship(Asava);
 		Set<Person> maternalUncle = maternalUncleRelationship.get().getRelative()
 				.getRelativePeople();
 
@@ -80,22 +83,24 @@ public class MaternalUncleRelationshipTest {
 	}
 
 	@Test
-	public void When_AddingBrotherInLaw_Expect_ChangeInPaternalUncleList() {
+	public void When_AddingBrotherInLaw_Expect_ChangeInMaternalUncleList() {
 		FamilyTreeInitializer familyTreeInitializer = new FamilyTreeInitializer();
 		familyTreeInitializer.init();
 		FamilyTree shanFamily = familyTreeInitializer
 				.getFamilyTree("King Shan");
 
-		Person kriya = shanFamily.getNodeById("Kriya");
-		Person newNode = new Person("new son to satya", Gender.MALE);
-		shanFamily.addNewNode(newNode, "Satya");
-		
+				Person yodhan = shanFamily.getNodeById("Yodhan");
+				Person tritha = shanFamily.getNodeById("Tritha");
+				Person newHusToTritha = new Person("husband to Tritha", Gender.MALE);
+				tritha.setSpouce(newHusToTritha);
+				newHusToTritha.setSpouce(tritha);
+
 		MaternalUncleRelationship maternalUncleRelationship = new MaternalUncleRelationship(
-				kriya);
+				yodhan);
 		Set<Person> maternalUncle = maternalUncleRelationship.get().getRelative()
 				.getRelativePeople();
 
-		Assert.assertTrue(maternalUncle.contains(newNode));
+		Assert.assertTrue(maternalUncle.contains(newHusToTritha));
 	}
 
 }

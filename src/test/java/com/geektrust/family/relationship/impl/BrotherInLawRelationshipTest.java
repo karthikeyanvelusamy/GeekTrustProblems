@@ -19,13 +19,13 @@ public class BrotherInLawRelationshipTest {
 		FamilyTree shanFamily = familyTreeInitializer
 				.getFamilyTree("King Shan");
 
-		Person mnu = shanFamily.getNodeById("Mnu");
-		Person jata = shanFamily.getNodeById("Jata");
-		BrotherInLawRelationship broInLaw = new BrotherInLawRelationship(mnu);
+		Person amba = shanFamily.getNodeById("Amba");
+		Person ish = shanFamily.getNodeById("Ish");
+		BrotherInLawRelationship broInLaw = new BrotherInLawRelationship(amba);
 		Set<Person> brosInLaw = broInLaw.get().getRelative()
 				.getRelativePeople();
 
-		Assert.assertTrue(brosInLaw.contains(jata));
+		Assert.assertTrue(brosInLaw.contains(ish));
 	}
 
 	@Test
@@ -67,12 +67,12 @@ public class BrotherInLawRelationshipTest {
 		FamilyTree shanFamily = familyTreeInitializer
 				.getFamilyTree("King Shan");
 
-		Person jnki = shanFamily.getNodeById("Jnki");
+		Person jaya = shanFamily.getNodeById("Jaya");
 		Person newNode = new Person("TestChild", Gender.MALE);
-		shanFamily.addNewNode(newNode, "Vich");
+		shanFamily.addNewNode(newNode, "Chit");
 
 		BrotherInLawRelationship broInLawRelation = new BrotherInLawRelationship(
-				jnki);
+				jaya);
 		Set<Person> brosInLaw = broInLawRelation.get().getRelative()
 				.getRelativePeople();
 
@@ -86,19 +86,19 @@ public class BrotherInLawRelationshipTest {
 		FamilyTree shanFamily = familyTreeInitializer
 				.getFamilyTree("King Shan");
 
-		Person kriya = shanFamily.getNodeById("Kriya");
+		Person vritha = shanFamily.getNodeById("Vritha");
+		Person tritha = shanFamily.getNodeById("Tritha");
+		Person husband = new Person("Husband to tritha", Gender.MALE);
+		husband.setSpouce(tritha);
+		tritha.setSpouce(husband);
 
-		Person newSister = new Person("sister to kriya", Gender.FEMALE);
-		Person husbandToNewSister = new Person("husbandOfNewSis", Gender.MALE,
-				null,newSister);
 
-		shanFamily.addNewNode(newSister, "Savya");
 
 		BrotherInLawRelationship broInLawRelation = new BrotherInLawRelationship(
-				kriya);
+				vritha);
 		Set<Person> brosInLaw = broInLawRelation.get().getRelative()
 				.getRelativePeople();
 
-		Assert.assertTrue(brosInLaw.contains(husbandToNewSister));
+		Assert.assertTrue(brosInLaw.contains(husband));
 	}
 }

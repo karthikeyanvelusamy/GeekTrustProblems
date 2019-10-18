@@ -19,10 +19,10 @@ public class PaternalAuntRelationshipTest {
 		FamilyTree shanFamily = familyTreeInitializer
 				.getFamilyTree("King Shan");
 
-		Person drita = shanFamily.getNodeById("Drita");
+		Person dritha = shanFamily.getNodeById("Dritha");
 		Person satya = shanFamily.getNodeById("Satya");
 		PaternalAuntRelationship paternalAuntRelation = new PaternalAuntRelationship(
-				drita);
+				dritha);
 		Set<Person> paternalAunt = paternalAuntRelation.get().getRelative()
 				.getRelativePeople();
 
@@ -36,7 +36,7 @@ public class PaternalAuntRelationshipTest {
 		FamilyTree shanFamily = familyTreeInitializer
 				.getFamilyTree("King Shan");
 
-		Person drita = shanFamily.getNodeById("Drita");
+		Person drita = shanFamily.getNodeById("Dritha");
 		Person lika = shanFamily.getNodeById("Lika");
 		PaternalAuntRelationship paternalAuntRelation = new PaternalAuntRelationship(
 				drita);
@@ -53,12 +53,12 @@ public class PaternalAuntRelationshipTest {
 		FamilyTree shanFamily = familyTreeInitializer
 				.getFamilyTree("King Shan");
 
-		Person drita = shanFamily.getNodeById("Drita");
+		Person drita = shanFamily.getNodeById("Dritha");
 		PaternalAuntRelationship paternalAuntRelation = new PaternalAuntRelationship(
 				drita);
 		Set<Person> paternalAunt = paternalAuntRelation.get().getRelative()
 				.getRelativePeople();
-		Assert.assertEquals(2, paternalAunt.size());
+		Assert.assertEquals(3, paternalAunt.size());
 	}
 
 	@Test
@@ -68,12 +68,12 @@ public class PaternalAuntRelationshipTest {
 		FamilyTree shanFamily = familyTreeInitializer
 				.getFamilyTree("King Shan");
 
-		Person kriya = shanFamily.getNodeById("Kriya");
-		Person newNode = new Person("newSisToSavya", Gender.FEMALE);
-		shanFamily.addNewNode(newNode, "Satya");
+		Person jnki = shanFamily.getNodeById("jnki");
+		Person newNode = new Person("newSisToAres", Gender.FEMALE);
+		shanFamily.addNewNode(newNode, "King Shan");
 
 		PaternalAuntRelationship paternalAuntRelation = new PaternalAuntRelationship(
-				kriya);
+				jnki);
 		Set<Person> paternalAunt = paternalAuntRelation.get().getRelative()
 				.getRelativePeople();
 
@@ -87,7 +87,7 @@ public class PaternalAuntRelationshipTest {
 		FamilyTree shanFamily = familyTreeInitializer
 				.getFamilyTree("King Shan");
 
-		Person drita = shanFamily.getNodeById("Drita");
+		Person drita = shanFamily.getNodeById("Dritha");
 		Person ish = shanFamily.getNodeById("Ish");
 		Person newWifeToIsh = new Person("wife to ish", Gender.FEMALE);
 		ish.setSpouce(newWifeToIsh);

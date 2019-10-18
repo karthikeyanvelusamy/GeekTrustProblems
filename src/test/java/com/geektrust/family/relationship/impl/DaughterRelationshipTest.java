@@ -20,7 +20,7 @@ public class DaughterRelationshipTest {
 				.getFamilyTree("King Shan");
 
 		Person chit = shanFamily.getNodeById("Chit");
-		Person drita = shanFamily.getNodeById("Drita");
+		Person drita = shanFamily.getNodeById("Vritha");
 		DaughterRelationship daughterRelationship = new DaughterRelationship(
 				chit);
 		Set<Person> daughters = daughterRelationship.get().getRelative()

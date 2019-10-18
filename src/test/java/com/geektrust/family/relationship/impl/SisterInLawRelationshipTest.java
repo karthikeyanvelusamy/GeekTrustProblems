@@ -19,13 +19,13 @@ public class SisterInLawRelationshipTest {
 		FamilyTree shanFamily = familyTreeInitializer
 				.getFamilyTree("King Shan");
 
-		Person ambi = shanFamily.getNodeById("Ambi");
-		Person satya = shanFamily.getNodeById("Satya");
-		SisterInLawRelationship sisterInLawRelationship = new SisterInLawRelationship(ambi);
+		Person jaya = shanFamily.getNodeById("Jaya");
+		Person tritha = shanFamily.getNodeById("Tritha");
+		SisterInLawRelationship sisterInLawRelationship = new SisterInLawRelationship(jaya);
 		Set<Person> sistersInLaw = sisterInLawRelationship.get().getRelative()
 				.getRelativePeople();
 
-		Assert.assertTrue(sistersInLaw.contains(satya));
+		Assert.assertTrue(sistersInLaw.contains(tritha));
 	}
 
 	@Test
@@ -56,7 +56,7 @@ public class SisterInLawRelationshipTest {
 		Set<Person> sistersInLaw = sisterInLawRelatioship.get().getRelative()
 				.getRelativePeople();
 
-		Assert.assertEquals(2, sistersInLaw.size());
+		Assert.assertEquals(3, sistersInLaw.size());
 	}
 
 	@Test
@@ -68,8 +68,8 @@ public class SisterInLawRelationshipTest {
 
 		Person newNode = new Person("Daughter to shan",Gender.FEMALE);
 		shanFamily.addNewNode(newNode, "King Shan");
-		Person ambi = shanFamily.getNodeById("Ambi");
-		SisterInLawRelationship sisterInLawRelatioship = new SisterInLawRelationship(ambi);
+		Person lika = shanFamily.getNodeById("Lika");
+		SisterInLawRelationship sisterInLawRelatioship = new SisterInLawRelationship(lika);
 		Set<Person> sistersInLaw = sisterInLawRelatioship.get().getRelative()
 				.getRelativePeople();
 

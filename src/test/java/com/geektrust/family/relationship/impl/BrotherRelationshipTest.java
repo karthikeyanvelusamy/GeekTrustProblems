@@ -35,10 +35,10 @@ public class BrotherRelationshipTest {
 		FamilyTree shanFamily = familyTreeInitializer
 				.getFamilyTree("King Shan");
 
-		Person satvy = shanFamily.getNodeById("Satvy");
+		Person asava = shanFamily.getNodeById("Asava");
 		Person newNode = new Person("newBro", Gender.MALE);
 		shanFamily.addNewNode(newNode, "Satya");
-		BrotherRelationship broRelationship = new BrotherRelationship(satvy);
+		BrotherRelationship broRelationship = new BrotherRelationship(asava);
 		Set<Person> bros = broRelationship.get().getRelative()
 				.getRelativePeople();
 
@@ -52,11 +52,11 @@ public class BrotherRelationshipTest {
 		FamilyTree shanFamily = familyTreeInitializer
 				.getFamilyTree("King Shan");
 
-		Person satvy = shanFamily.getNodeById("Satvy");
-		BrotherRelationship broRelationship = new BrotherRelationship(satvy);
+		Person dritha = shanFamily.getNodeById("Dritha");
+		BrotherRelationship broRelationship = new BrotherRelationship(dritha);
 		Set<Person> bros = broRelationship.get().getRelative()
 				.getRelativePeople();
 
-		Assert.assertEquals(2, bros.size());
+		Assert.assertEquals(1, bros.size());
 	}
 }

@@ -4,7 +4,6 @@ import com.geektrust.family.problems.KingShanFirstProblemMeetFamily;
 import com.geektrust.family.problems.KingShanFourthProblemWhosDaddy;
 import com.geektrust.family.problems.KingShanSecondProblemNewBorn;
 import com.geektrust.family.problems.KingShanThirdProblemGirlChild;
-import com.geektrust.family.problems.KingShanFifthProblemGen;
 import com.geektrust.family.tree.FamilyTree;
 
 /**
@@ -49,9 +48,6 @@ public class CLIOptionFactory {
 			break;
 		case "4":
 			cliOption = new KingShanFourthProblemWhosDaddy(familyTree);
-			break;
-			case "5":
-			cliOption = new KingShanFifthProblemGen(familyTree);
 			break;
 		default:
 			cliOption = null;
